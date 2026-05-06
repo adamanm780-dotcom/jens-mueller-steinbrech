@@ -32,3 +32,5 @@
 
 ## Updates
 - 2026-05-06: Initial Build
+- 2026-05-06: Auf Vercel deployed → https://jens-mueller-steinbrech.vercel.app
+- 2026-05-06: Google Maps Section (#anfahrt) zwischen Kontakt und Footer eingebaut (iframe Embed, kein API-Key, warm-getönt via grayscale+sepia Filter), Footer-Link „Anfahrt & Karte"

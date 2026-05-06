@@ -213,6 +213,22 @@ h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:400;color:var(--t
 .contact__hours dd{color:var(--text)}
 .contact__note{margin-top:22px;font-size:12px;letter-spacing:.18em;color:var(--accent-dark);text-transform:uppercase;font-weight:500}
 
+/* Map */
+.map{padding:0 0 140px;background:var(--bg);position:relative}
+@media (max-width:768px){.map{padding:0 0 90px}}
+.map__head{text-align:center;margin-bottom:54px}
+.map__head .gold-line{margin-bottom:22px}
+.map__head h2{font-size:clamp(38px,5vw,68px);line-height:1.06}
+.map__head h2 em{font-style:italic;color:var(--accent-dark)}
+.map__head p{margin-top:18px;color:var(--text-soft);font-family:'Cormorant Garamond',serif;font-size:19px;font-style:italic;letter-spacing:.01em}
+.map__frame{position:relative;width:min(1320px,92vw);margin:0 auto;aspect-ratio:21/9;overflow:hidden;border:1px solid rgba(181,139,106,.28);box-shadow:0 30px 80px -30px rgba(31,24,20,.35)}
+.map__frame::after{content:"";position:absolute;inset:14px;border:1px solid rgba(181,139,106,.22);pointer-events:none;z-index:2}
+.map__frame iframe{width:100%;height:100%;border:0;display:block;filter:grayscale(.35) sepia(.18) contrast(1.02)}
+.map__caption{margin-top:26px;text-align:center;font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--accent);font-weight:500}
+.map__caption a{color:var(--accent-dark);border-bottom:1px solid rgba(138,98,66,.35);padding-bottom:2px;margin-left:14px;transition:color .3s ease}
+.map__caption a:hover{color:var(--accent)}
+@media (max-width:680px){.map__frame{aspect-ratio:4/5}}
+
 /* Footer */
 .footer{background:var(--bg-deep);color:rgba(251,246,236,.7);padding:90px 0 50px}
 .footer__grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:50px;margin-bottom:60px}
@@ -494,6 +510,27 @@ h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:400;color:var(--t
   </div>
 </section>
 
+<!-- Map -->
+<section class="map" id="anfahrt" aria-label="Anfahrt und Standort">
+  <div class="map__head reveal">
+    <span class="gold-line">Anfahrt</span>
+    <h2>In der <em>Mainzer Altstadt</em></h2>
+    <p>Zanggasse 8–10 · zwischen Dom und Rhein, fußläufig vom Schillerplatz.</p>
+  </div>
+  <div class="map__frame reveal">
+    <iframe
+      src="https://www.google.com/maps?q=Zanggasse+8-10,+55116+Mainz&hl=de&z=17&output=embed"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      title="Friseur Müller-Steinbrech, Zanggasse 8–10, 55116 Mainz auf Google Maps"
+      allowfullscreen></iframe>
+  </div>
+  <div class="map__caption">
+    Zanggasse 8–10 · 55116 Mainz
+    <a href="https://www.google.com/maps/dir/?api=1&destination=Zanggasse+8-10%2C+55116+Mainz" target="_blank" rel="noopener">Route planen →</a>
+  </div>
+</section>
+
 <!-- Footer -->
 <footer class="footer">
   <div class="container">
@@ -509,6 +546,7 @@ h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:400;color:var(--t
           <li><a href="mailto:mueller-steinbrech1@t-online.de">mueller-steinbrech1@t-online.de</a></li>
           <li>Zanggasse 8–10</li>
           <li>55116 Mainz</li>
+          <li><a href="#anfahrt">Anfahrt &amp; Karte</a></li>
         </ul>
       </div>
       <div>
