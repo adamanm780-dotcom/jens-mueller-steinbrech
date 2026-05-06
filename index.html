@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Friseur Müller-Steinbrech — Mainzer Handwerk seit 1972</title>
+<meta name="description" content="Friseur Müller-Steinbrech in Mainz: Familienbetrieb in dritter Generation. Kurzhaarschnitte, Coloration, Beratung. Zanggasse 8–10, 55116 Mainz. Termin: 06131 / 228394." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preload" as="image" href="assets/hero.webp" type="image/webp" />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Italiana&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg-deep:#1f1814;
+  --bg:#f5ede0;
+  --bg-raised:#ebe1d0;
+  --bg-elevated:#e0d4c0;
+  --accent:#b58b6a;
+  --accent-dark:#8a6242;
+  --accent-light:#d6a98a;
+  --ivory:#fbf6ec;
+  --cream:#f9f1e4;
+  --muted:#8a7c6b;
+  --text:#2a221b;
+  --text-soft:#4a3f33;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+body{font-family:'Inter',sans-serif;font-weight:300;line-height:1.7;letter-spacing:.01em;overflow-x:hidden;background:var(--bg);color:var(--text)}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+section{padding:140px 0;position:relative}
+@media (max-width:768px){section{padding:90px 0}}
+.container{width:min(1320px,92vw);margin:0 auto}
+
+.serif{font-family:'Cormorant Garamond',serif;font-weight:400;letter-spacing:.02em}
+.display{font-family:'Italiana',serif;letter-spacing:.08em}
+.overline{font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);font-weight:500}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif;font-weight:400;color:var(--text);line-height:1.12}
+
+.gold-line{display:inline-flex;align-items:center;gap:14px;color:var(--accent);font-size:11px;letter-spacing:.4em;text-transform:uppercase}
+.gold-line::before,.gold-line::after{content:"";display:inline-block;width:60px;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent)}
+
+.nav a{font-size:12px;letter-spacing:.28em;text-transform:uppercase;position:relative;padding:10px 0;transition:color .3s ease}
+.nav a::after{content:"";position:absolute;left:50%;bottom:4px;transform:translateX(-50%);width:0;height:1px;background:var(--accent);transition:width .4s ease}
+.nav a:hover::after{width:100%}
+.nav a:hover{color:var(--accent)}
+
+/* Topbar */
+.topbar{background:var(--bg-deep);color:var(--cream);font-size:11px;letter-spacing:.28em;text-transform:uppercase}
+.topbar__inner{display:flex;justify-content:space-between;align-items:center;padding:12px 0;font-weight:400}
+.topbar__inner span{display:inline-flex;align-items:center;gap:10px;color:var(--cream)}
+.topbar__inner span b{color:var(--accent);font-weight:500;letter-spacing:.32em}
+@media (max-width:720px){.topbar__inner{flex-direction:column;gap:6px;padding:10px 0}}
+
+/* Header */
+.header{position:sticky;top:0;z-index:50;background:rgba(245,237,224,.78);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(181,139,106,.18)}
+.header__inner{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:18px 0;gap:24px}
+.header__nav{display:flex;gap:36px}
+.header__nav.right{justify-content:flex-end}
+.brand{font-family:'Italiana',serif;font-size:22px;letter-spacing:.18em;color:var(--text);text-align:center;text-transform:uppercase}
+.brand small{display:block;font-family:'Inter',sans-serif;font-size:9px;letter-spacing:.34em;color:var(--accent);font-weight:500;margin-top:4px}
+.icon-btn{width:42px;height:42px;border-radius:50%;display:inline-grid;place-items:center;border:1px solid rgba(138,98,66,.4);color:var(--accent-dark);transition:all .3s ease;background:rgba(251,246,236,.6)}
+.icon-btn:hover{background:var(--accent);color:var(--ivory);border-color:var(--accent)}
+@media (max-width:880px){
+  .header__nav{display:none}
+  .header__inner{grid-template-columns:auto 1fr auto}
+}
+
+/* Hero */
+.hero{position:relative;height:min(92vh,860px);overflow:hidden;background:var(--bg-deep)}
+.hero__media{position:absolute;inset:0}
+.hero__media img{width:100%;height:100%;object-fit:cover;animation:kenburns 24s ease-in-out infinite alternate}
+.hero__media::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(31,24,20,.18) 0%,rgba(31,24,20,0) 30%,rgba(31,24,20,0) 70%,rgba(31,24,20,.55) 100%);pointer-events:none}
+.hero__grain{position:absolute;inset:0;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='.45'/></svg>");mix-blend-mode:overlay;opacity:.08;pointer-events:none}
+.hero::after{content:"";position:absolute;inset:18px;border:1px solid rgba(214,169,138,.32);pointer-events:none;z-index:5}
+.hero__content{position:relative;z-index:6;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:90px}
+.hero__bar{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;flex-wrap:wrap}
+.hero__tags{display:flex;gap:14px;flex-wrap:wrap;color:var(--ivory)}
+.hero__tags span{font-size:11px;letter-spacing:.32em;text-transform:uppercase;padding:8px 14px;border:1px solid rgba(251,246,236,.4);background:rgba(31,24,20,.4);backdrop-filter:blur(4px)}
+.hero__cta{display:inline-flex;align-items:center;gap:14px;color:var(--ivory);background:var(--accent);padding:18px 32px;font-size:11px;letter-spacing:.32em;text-transform:uppercase;font-weight:500;transition:all .35s ease;border:1px solid var(--accent)}
+.hero__cta:hover{background:var(--accent-dark);border-color:var(--accent-dark);transform:translateY(-2px)}
+.hero__title{font-family:'Cormorant Garamond',serif;font-weight:300;color:var(--ivory);font-size:clamp(48px,7.5vw,108px);line-height:1.04;letter-spacing:-.01em;margin-bottom:30px;max-width:14ch}
+.hero__title em{font-style:italic;color:var(--accent-light)}
+.hero__since{display:inline-flex;align-items:center;gap:14px;color:var(--accent-light);font-size:11px;letter-spacing:.4em;text-transform:uppercase;margin-bottom:24px}
+.hero__since::before{content:"";display:inline-block;width:60px;height:1px;background:var(--accent-light)}
+
+@keyframes kenburns{0%{transform:scale(1) translate(0,0)}100%{transform:scale(1.06) translate(-1%,-1%)}}
+
+/* Marquee */
+.marquee{background:var(--bg-deep);overflow:hidden;border-block:1px solid rgba(181,139,106,.3)}
+.marquee__track{display:flex;gap:80px;padding:22px 0;white-space:nowrap;animation:marquee 38s linear infinite}
+.marquee__track span{font-family:'Cormorant Garamond',serif;font-size:22px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream);font-weight:300}
+.marquee__track span::before{content:"✦";display:inline-block;margin-right:80px;color:var(--accent)}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* Intro */
+.intro{padding:160px 0 120px}
+.intro__grid{display:grid;grid-template-columns:1fr 1fr;gap:90px;align-items:center}
+@media (max-width:880px){.intro__grid{grid-template-columns:1fr;gap:50px}}
+.intro__title{font-size:clamp(40px,5vw,72px);font-weight:300;line-height:1.08;margin-top:20px}
+.intro__title em{font-style:italic;color:var(--accent-dark)}
+.intro__body{color:var(--text-soft);font-size:16px;line-height:1.85;max-width:46ch}
+.intro__body p+p{margin-top:18px}
+.intro__cta{display:inline-flex;align-items:center;gap:14px;margin-top:36px;color:var(--accent-dark);font-size:11px;letter-spacing:.32em;text-transform:uppercase;font-weight:500;border-bottom:1px solid var(--accent);padding-bottom:6px;transition:gap .35s ease}
+.intro__cta:hover{gap:20px;color:var(--accent)}
+.intro__dropcap::first-letter{font-family:'Cormorant Garamond',serif;font-size:64px;float:left;line-height:.9;padding:6px 12px 0 0;color:var(--accent-dark);font-weight:400}
+
+/* Categories */
+.cats{background:var(--bg-raised);position:relative}
+.cats::before{content:"";position:absolute;inset:0;background:url("assets/texture.webp") center/cover;opacity:.18;mix-blend-mode:multiply;pointer-events:none}
+.cats__head{text-align:center;margin-bottom:80px}
+.cats__head h2{font-size:clamp(38px,5vw,64px);margin-top:18px}
+.cats__head h2 em{font-style:italic;color:var(--accent-dark)}
+.cats__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;position:relative}
+@media (max-width:880px){.cats__grid{grid-template-columns:1fr}}
+.cat-card{background:var(--cream);overflow:hidden;position:relative;display:flex;flex-direction:column}
+.cat-card__media{aspect-ratio:4/3;overflow:hidden}
+.cat-card__media img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.cat-card:hover .cat-card__media img{transform:scale(1.06)}
+.cat-card__body{padding:32px 30px 36px}
+.cat-card__num{font-family:'Italiana',serif;font-size:13px;letter-spacing:.4em;color:var(--accent);text-transform:uppercase}
+.cat-card__title{font-size:30px;margin:14px 0 14px;font-weight:400}
+.cat-card__text{color:var(--text-soft);font-size:14px;line-height:1.75}
+
+/* Featured */
+.featured{padding-top:140px}
+.featured__head{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;flex-wrap:wrap;margin-bottom:60px}
+.featured__head h2{font-size:clamp(36px,4.5vw,58px);margin-top:14px}
+.featured__head h2 em{font-style:italic;color:var(--accent-dark)}
+.featured__lead{max-width:38ch;color:var(--text-soft);font-size:14px;line-height:1.8}
+.featured__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+@media (max-width:1080px){.featured__grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:540px){.featured__grid{grid-template-columns:1fr}}
+.feat-item{display:flex;flex-direction:column;gap:18px}
+.feat-item__media{aspect-ratio:3/4;overflow:hidden;background:var(--bg-elevated)}
+.feat-item__media img{width:100%;height:100%;object-fit:cover;filter:contrast(1.02) saturate(.95);transition:transform .9s ease,filter .9s ease}
+.feat-item:hover .feat-item__media img{transform:scale(1.04);filter:contrast(1.05) saturate(1)}
+.feat-item__label{font-family:'Italiana',serif;font-size:13px;letter-spacing:.4em;color:var(--accent);text-transform:uppercase}
+.feat-item__title{font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--text);margin-top:6px}
+.feat-item__price{font-size:12px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin-top:4px}
+
+/* Atelier */
+.atelier{background:var(--bg-deep);color:var(--cream);position:relative;overflow:hidden}
+.atelier::before{content:"";position:absolute;inset:0;background:url("assets/texture.webp") center/cover;opacity:.06;mix-blend-mode:overlay;pointer-events:none}
+.atelier__grid{display:grid;grid-template-columns:5fr 7fr;gap:90px;align-items:center}
+@media (max-width:980px){.atelier__grid{grid-template-columns:1fr;gap:50px}}
+.atelier__media{position:relative;aspect-ratio:3/4;overflow:hidden}
+.atelier__media::after{content:"";position:absolute;inset:14px;border:1px solid rgba(214,169,138,.35);pointer-events:none}
+.atelier__media img{width:100%;height:100%;object-fit:cover;filter:contrast(1.02);transition:transform 1.2s ease}
+.atelier__media:hover img{transform:scale(1.04)}
+.atelier h2{color:var(--ivory);font-size:clamp(40px,5vw,72px);margin-top:22px;line-height:1.06}
+.atelier h2 em{font-style:italic;color:var(--accent-light)}
+.atelier__body{color:rgba(251,246,236,.78);font-size:16px;line-height:1.85;max-width:54ch}
+.atelier__body p+p{margin-top:18px}
+.atelier__body::first-letter{font-family:'Cormorant Garamond',serif;font-size:64px;float:left;line-height:.9;padding:6px 12px 0 0;color:var(--accent-light);font-weight:400}
+.atelier .overline{color:var(--accent-light)}
+.atelier__signature{margin-top:38px;font-family:'Italiana',serif;font-size:18px;letter-spacing:.18em;color:var(--accent-light);display:inline-block}
+.atelier__signature::before{content:"—";margin-right:14px;color:var(--accent)}
+
+/* Detail Grid */
+.detail-grid{padding:140px 0}
+.detail-grid__head{text-align:center;margin-bottom:60px}
+.detail-grid__head h2{font-size:clamp(36px,4.5vw,58px);margin-top:14px}
+.detail-grid__head h2 em{font-style:italic;color:var(--accent-dark)}
+.dg{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:200px;gap:14px}
+.dg .it{overflow:hidden;background:var(--bg-elevated);position:relative}
+.dg .it img{width:100%;height:100%;object-fit:cover;transition:transform 1s ease}
+.dg .it:hover img{transform:scale(1.06)}
+.dg .it.x2c{grid-column:span 2}
+.dg .it.x3c{grid-column:span 3}
+.dg .it.x4c{grid-column:span 4}
+.dg .it.x2r{grid-row:span 2}
+@media (max-width:880px){
+  .dg{grid-template-columns:repeat(2,1fr);grid-auto-rows:180px}
+  .dg .it.x2c,.dg .it.x3c,.dg .it.x4c{grid-column:span 2}
+  .dg .it.x2r{grid-row:span 1}
+}
+
+/* Reviews */
+.reviews{background:var(--bg-raised);position:relative}
+.reviews__head{text-align:center;margin-bottom:70px}
+.reviews__head h2{font-size:clamp(34px,4.2vw,52px);margin-top:14px}
+.reviews__grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+@media (max-width:880px){.reviews__grid{grid-template-columns:1fr}}
+.review{background:var(--cream);padding:50px 40px 44px;position:relative}
+.review::before{content:"\201C";position:absolute;top:18px;left:30px;font-family:'Cormorant Garamond',serif;font-size:80px;color:var(--accent);line-height:1;opacity:.6}
+.review__stars{color:var(--accent);font-size:13px;letter-spacing:.4em;margin-bottom:22px;position:relative}
+.review__text{font-family:'Cormorant Garamond',serif;font-size:22px;line-height:1.5;color:var(--text);font-weight:400;font-style:italic}
+.review__author{margin-top:30px;font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent-dark);font-weight:500}
+.review__rating-banner{text-align:center;margin-bottom:40px;color:var(--accent);font-size:12px;letter-spacing:.4em;text-transform:uppercase}
+.review__rating-banner b{font-family:'Italiana',serif;font-size:18px;letter-spacing:.2em;color:var(--accent-dark)}
+
+/* Contact */
+.contact{padding:160px 0 140px;position:relative;background:var(--bg)}
+.contact__grid{display:grid;grid-template-columns:1.2fr 1fr;gap:90px;align-items:center}
+@media (max-width:980px){.contact__grid{grid-template-columns:1fr;gap:50px}}
+.contact h2{font-size:clamp(42px,5.5vw,82px);margin-top:18px;line-height:1.04}
+.contact h2 em{font-style:italic;color:var(--accent-dark)}
+.contact__body{color:var(--text-soft);font-size:16px;line-height:1.8;max-width:50ch;margin-top:22px}
+.contact__cta{display:inline-flex;align-items:center;gap:16px;margin-top:42px;background:var(--accent);color:var(--ivory);padding:24px 40px;font-size:12px;letter-spacing:.34em;text-transform:uppercase;font-weight:500;transition:all .35s ease;border:1px solid var(--accent)}
+.contact__cta:hover{background:var(--accent-dark);border-color:var(--accent-dark);transform:translateY(-2px)}
+.contact__info{background:var(--cream);padding:52px 48px;border:1px solid rgba(181,139,106,.2)}
+.contact__info h3{font-size:13px;letter-spacing:.34em;text-transform:uppercase;color:var(--accent);font-family:'Inter',sans-serif;font-weight:500;margin-bottom:30px}
+.contact__row{display:flex;justify-content:space-between;align-items:baseline;padding:18px 0;border-bottom:1px solid rgba(138,98,66,.18);gap:20px}
+.contact__row:last-of-type{border-bottom:0}
+.contact__row dt{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);font-weight:500;min-width:90px}
+.contact__row dd{font-family:'Cormorant Garamond',serif;font-size:18px;color:var(--text);text-align:right}
+.contact__hours-block{margin-top:36px;padding-top:28px;border-top:1px solid rgba(138,98,66,.18)}
+.contact__hours-block h4{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--accent);font-family:'Inter',sans-serif;font-weight:500;margin-bottom:18px}
+.contact__hours{display:grid;grid-template-columns:1fr auto;gap:10px 20px;font-family:'Cormorant Garamond',serif;font-size:16px}
+.contact__hours dt{color:var(--muted)}
+.contact__hours dd{color:var(--text)}
+.contact__note{margin-top:22px;font-size:12px;letter-spacing:.18em;color:var(--accent-dark);text-transform:uppercase;font-weight:500}
+
+/* Footer */
+.footer{background:var(--bg-deep);color:rgba(251,246,236,.7);padding:90px 0 50px}
+.footer__grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:50px;margin-bottom:60px}
+@media (max-width:880px){.footer__grid{grid-template-columns:1fr 1fr;gap:40px}}
+@media (max-width:540px){.footer__grid{grid-template-columns:1fr}}
+.footer__brand{font-family:'Italiana',serif;font-size:24px;letter-spacing:.18em;color:var(--ivory);text-transform:uppercase}
+.footer__brand small{display:block;font-family:'Inter',sans-serif;font-size:10px;letter-spacing:.34em;color:var(--accent-light);margin-top:8px;font-weight:500}
+.footer__about{margin-top:22px;font-family:'Cormorant Garamond',serif;font-size:17px;color:rgba(251,246,236,.65);line-height:1.6;max-width:34ch;font-style:italic}
+.footer h4{font-family:'Inter',sans-serif;font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--accent-light);font-weight:500;margin-bottom:22px}
+.footer ul{list-style:none}
+.footer li{margin-bottom:12px;font-size:14px}
+.footer li a:hover{color:var(--accent-light)}
+.footer__bottom{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding-top:30px;border-top:1px solid rgba(214,169,138,.18);font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:rgba(251,246,236,.45)}
+.footer__bottom a:hover{color:var(--accent-light)}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .9s ease,transform .9s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.hero__media img{animation:none}.marquee__track{animation:none}}
+</style>
+</head>
+<body>
+
+<!-- Topbar -->
+<div class="topbar">
+  <div class="container topbar__inner">
+    <span><b>Mainz Altstadt</b> · Zanggasse 8–10 · 55116 Mainz</span>
+    <span>Termin: <b>06131 / 228394</b> · Di–Fr 7:30–18:00 · Sa 8:00–13:00</span>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="header">
+  <div class="container header__inner">
+    <nav class="header__nav nav">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#atelier">Atelier</a>
+      <a href="#galerie">Galerie</a>
+    </nav>
+    <div class="brand">Müller-Steinbrech<small>Friseurmeister · Mainz</small></div>
+    <nav class="header__nav nav right">
+      <a href="#stimmen">Stimmen</a>
+      <a href="#kontakt">Termin</a>
+      <a class="icon-btn" href="tel:+496131228394" aria-label="Anrufen">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" aria-label="Friseur Müller-Steinbrech Mainz">
+  <div class="hero__media">
+    <picture>
+      <source srcset="assets/hero.webp" type="image/webp" />
+      <img src="assets/hero.webp" alt="Editorial Aufnahme: Hände beim Schneiden eines kurzen blonden Haarschnitts in einem warmen, hellen Atelier" loading="eager" fetchpriority="high" />
+    </picture>
+    <div class="hero__grain" aria-hidden="true"></div>
+  </div>
+  <div class="hero__content container">
+    <div class="hero__since">Mainzer Handwerk seit 1972</div>
+    <h1 class="hero__title">Friseur in <em>dritter</em> Generation.</h1>
+    <div class="hero__bar">
+      <div class="hero__tags" aria-hidden="false">
+        <span>Kurzhaarschnitt</span>
+        <span>Coloration</span>
+        <span>Strähnen</span>
+        <span>Beratung</span>
+      </div>
+      <a class="hero__cta" href="tel:+496131228394">Termin anfragen
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Marquee -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>Damenhaarschnitt</span>
+    <span>Kurzhaar-Spezialist</span>
+    <span>Coloration</span>
+    <span>Strähnen &amp; Highlights</span>
+    <span>Dauerwelle</span>
+    <span>Keratin-Behandlung</span>
+    <span>Damenhaarschnitt</span>
+    <span>Kurzhaar-Spezialist</span>
+    <span>Coloration</span>
+    <span>Strähnen &amp; Highlights</span>
+    <span>Dauerwelle</span>
+    <span>Keratin-Behandlung</span>
+  </div>
+</div>
+
+<!-- Intro -->
+<section class="intro">
+  <div class="container intro__grid">
+    <div class="reveal">
+      <span class="overline">Mainzer Familienhandwerk</span>
+      <h2 class="intro__title">Schönheit ist <em>Können</em><br/>— nicht Inszenierung.</h2>
+    </div>
+    <div class="intro__body reveal">
+      <p class="intro__dropcap">In der Zanggasse, mitten in der Mainzer Altstadt, schneiden wir seit über fünfzig Jahren. Drei Generationen. Zwei Hände. Eine Schere.</p>
+      <p>Bei uns sitzt jeder Schnitt persönlich. Wir nehmen uns Zeit, beraten ehrlich und arbeiten an Ihrem Look — nicht an einem Trend. Termine ausschließlich nach Vereinbarung.</p>
+      <a class="intro__cta" href="tel:+496131228394">Termin vereinbaren
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Categories -->
+<section class="cats" id="leistungen">
+  <div class="container">
+    <div class="cats__head reveal">
+      <span class="gold-line">Leistungen</span>
+      <h2>Klassisch geschnitten.<br/><em>Modern verstanden.</em></h2>
+    </div>
+    <div class="cats__grid">
+      <article class="cat-card reveal">
+        <div class="cat-card__media"><img src="assets/detail-02.webp" alt="Kurzhaarschnitt — Detailaufnahme" loading="lazy" /></div>
+        <div class="cat-card__body">
+          <span class="cat-card__num">I · Schnitt</span>
+          <h3 class="cat-card__title">Damenhaarschnitt</h3>
+          <p class="cat-card__text">Unsere Spezialität: Kurzhaarschnitte mit Linie und Charakter. Auch Long-Bob, Pony, Pflegeschnitt. Beratung inklusive — wir hören zu, bevor wir schneiden.</p>
+        </div>
+      </article>
+      <article class="cat-card reveal">
+        <div class="cat-card__media"><img src="assets/detail-01.webp" alt="Vintage Friseurschere und Kamm auf cremefarbenem Leinen" loading="lazy" /></div>
+        <div class="cat-card__body">
+          <span class="cat-card__num">II · Farbe</span>
+          <h3 class="cat-card__title">Coloration &amp; Strähnen</h3>
+          <p class="cat-card__text">Vollcoloration, Tönung, Foliensträhnen, Highlights. Wir mischen jede Nuance auf Ihren Hautton ab — natürlich, langlebig, niemals plakativ.</p>
+        </div>
+      </article>
+      <article class="cat-card reveal">
+        <div class="cat-card__media"><img src="assets/detail-03.webp" alt="Atelier-Detail mit warmem Licht und Vintage-Stuhl" loading="lazy" /></div>
+        <div class="cat-card__body">
+          <span class="cat-card__num">III · Pflege</span>
+          <h3 class="cat-card__title">Behandlungen</h3>
+          <p class="cat-card__text">Dauerwelle, Keratin-Glättung, Pflegekuren, Kinderhaarschnitt. Wir arbeiten mit hochwertigen Produkten und ruhiger Hand — wie es das Handwerk verlangt.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Featured -->
+<section class="featured">
+  <div class="container">
+    <div class="featured__head reveal">
+      <div>
+        <span class="overline">Im Atelier</span>
+        <h2>Ausgewählte <em>Arbeiten</em>.</h2>
+      </div>
+      <p class="featured__lead">Eine kleine Auswahl typischer Schnitte und Looks aus dem Mainzer Atelier. Jeder Stuhl, jede Schere, jedes Detail von Hand.</p>
+    </div>
+    <div class="featured__grid">
+      <figure class="feat-item reveal">
+        <div class="feat-item__media"><img src="assets/detail-02.webp" alt="Kurzhaarschnitt — präzise Nackenlinie" loading="lazy" /></div>
+        <span class="feat-item__label">I · Pixie</span>
+        <h3 class="feat-item__title">Klassischer Kurzhaarschnitt</h3>
+        <span class="feat-item__price">Beratung &amp; Termin</span>
+      </figure>
+      <figure class="feat-item reveal">
+        <div class="feat-item__media"><img src="assets/detail-01.webp" alt="Vintage Schere und Kamm" loading="lazy" /></div>
+        <span class="feat-item__label">II · Color</span>
+        <h3 class="feat-item__title">Foliensträhnen</h3>
+        <span class="feat-item__price">Individuell abgestimmt</span>
+      </figure>
+      <figure class="feat-item reveal">
+        <div class="feat-item__media"><img src="assets/about.webp" alt="Hände am Werk im Atelier" loading="lazy" /></div>
+        <span class="feat-item__label">III · Cut</span>
+        <h3 class="feat-item__title">Long-Bob</h3>
+        <span class="feat-item__price">Schnitt &amp; Pflege</span>
+      </figure>
+      <figure class="feat-item reveal">
+        <div class="feat-item__media"><img src="assets/detail-03.webp" alt="Atelier mit Vintage-Stuhl und warmem Licht" loading="lazy" /></div>
+        <span class="feat-item__label">IV · Care</span>
+        <h3 class="feat-item__title">Keratin-Behandlung</h3>
+        <span class="feat-item__price">Pflege auf Termin</span>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- Atelier -->
+<section class="atelier" id="atelier">
+  <div class="container atelier__grid">
+    <div class="atelier__media reveal">
+      <img src="assets/about.webp" alt="Hände eines Friseurmeisters bei der Arbeit im Mainzer Atelier" loading="lazy" />
+    </div>
+    <div class="reveal">
+      <span class="overline">Über uns</span>
+      <h2>Drei Generationen, <em>ein Stuhl</em>, eine Schere.</h2>
+      <div class="atelier__body">
+        <p>Mein Großvater eröffnete dieses Geschäft 1972 in der Zanggasse. Mein Vater übernahm. Heute schneide ich. Was sich nicht geändert hat: dass wir uns Zeit nehmen, beraten und schneiden, bis es sitzt.</p>
+        <p>Wir sind ein Zwei-Personen-Salon. Kein Walk-In, kein Massenbetrieb — nur Termine. Dafür: 100 % Aufmerksamkeit. Klassische Technik trifft moderne Schnittführung. Wer einmal hier war, kommt wieder.</p>
+      </div>
+      <div class="atelier__signature">Jens Müller-Steinbrech, Friseurmeister</div>
+    </div>
+  </div>
+</section>
+
+<!-- Detail Grid -->
+<section class="detail-grid" id="galerie">
+  <div class="container">
+    <div class="detail-grid__head reveal">
+      <span class="gold-line">Atelier-Eindrücke</span>
+      <h2>Aus dem <em>Alltag</em>.</h2>
+    </div>
+    <div class="dg">
+      <div class="it x4c x2r reveal"><img src="assets/hero.webp" alt="Editorial Schnitt-Aufnahme im Atelier" loading="lazy" /></div>
+      <div class="it x2c reveal"><img src="assets/detail-01.webp" alt="Schere und Kamm auf Leinen" loading="lazy" /></div>
+      <div class="it x2c reveal"><img src="assets/detail-02.webp" alt="Frau mit Kurzhaarschnitt von hinten" loading="lazy" /></div>
+      <div class="it x2c reveal"><img src="assets/about.webp" alt="Hände am Werk" loading="lazy" /></div>
+      <div class="it x2c reveal"><img src="assets/detail-03.webp" alt="Atelier-Innenraum mit warmem Licht" loading="lazy" /></div>
+    </div>
+  </div>
+</section>
+
+<!-- Reviews -->
+<section class="reviews" id="stimmen">
+  <div class="container">
+    <div class="reviews__head reveal">
+      <span class="gold-line">Stimmen</span>
+      <h2>Was unsere <em>Kundinnen</em> sagen.</h2>
+      <div class="review__rating-banner reveal" style="margin-top:28px"><b>5,0 ★★★★★</b> &nbsp;·&nbsp; Google &amp; kennstdueinen.de</div>
+    </div>
+    <div class="reviews__grid">
+      <article class="review reveal">
+        <div class="review__stars">★ ★ ★ ★ ★</div>
+        <p class="review__text">Zwei nette Männer, die richtig gut schneiden. Gute Beratung — und ich gehe immer mit einem Lächeln raus.</p>
+        <div class="review__author">— Stammkundin · Mainz</div>
+      </article>
+      <article class="review reveal">
+        <div class="review__stars">★ ★ ★ ★ ★</div>
+        <p class="review__text">Einfach genial und lieben das was sie tun. Man spürt das Handwerk in jeder Bewegung.</p>
+        <div class="review__author">— Kundin · Bewertung kennstdueinen.de</div>
+      </article>
+      <article class="review reveal">
+        <div class="review__stars">★ ★ ★ ★ ★</div>
+        <p class="review__text">Macht wirklich schöne Kurzhaarschnitte für Frauen. Hier sitzt jede Linie.</p>
+        <div class="review__author">— Kundin · Mainz Altstadt</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section class="contact" id="kontakt">
+  <div class="container contact__grid">
+    <div class="reveal">
+      <span class="overline">Termin</span>
+      <h2>Wir nehmen uns <em>Zeit</em>.</h2>
+      <p class="contact__body">Aktuell ausschließlich nach Vereinbarung. Rufen Sie uns an oder schreiben Sie eine E-Mail — wir melden uns zurück.</p>
+      <a class="contact__cta" href="tel:+496131228394">Jetzt anrufen
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      </a>
+    </div>
+    <div class="contact__info reveal">
+      <h3>Friseur Müller-Steinbrech</h3>
+      <dl>
+        <div class="contact__row"><dt>Adresse</dt><dd>Zanggasse 8–10<br/>55116 Mainz</dd></div>
+        <div class="contact__row"><dt>Telefon</dt><dd><a href="tel:+496131228394">06131 / 228394</a></dd></div>
+        <div class="contact__row"><dt>E-Mail</dt><dd><a href="mailto:mueller-steinbrech1@t-online.de">mueller-steinbrech1<br/>@t-online.de</a></dd></div>
+      </dl>
+      <div class="contact__hours-block">
+        <h4>Öffnungszeiten</h4>
+        <dl class="contact__hours">
+          <dt>Montag</dt><dd>geschlossen</dd>
+          <dt>Dienstag–Freitag</dt><dd>07:30 – 18:00</dd>
+          <dt>Samstag</dt><dd>08:00 – 13:00</dd>
+          <dt>Sonntag</dt><dd>geschlossen</dd>
+        </dl>
+        <div class="contact__note">Termine ausschließlich nach Vereinbarung</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div>
+        <div class="footer__brand">Müller-Steinbrech<small>Mainzer Handwerk · seit 1972</small></div>
+        <p class="footer__about">Friseur in dritter Generation. Termin nach Vereinbarung. In der Zanggasse, mitten in der Mainzer Altstadt.</p>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li><a href="tel:+496131228394">06131 / 228394</a></li>
+          <li><a href="mailto:mueller-steinbrech1@t-online.de">mueller-steinbrech1@t-online.de</a></li>
+          <li>Zanggasse 8–10</li>
+          <li>55116 Mainz</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Öffnungszeiten</h4>
+        <ul>
+          <li>Mo · geschlossen</li>
+          <li>Di–Fr · 7:30–18:00</li>
+          <li>Sa · 8:00–13:00</li>
+          <li>So · geschlossen</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Service</h4>
+        <ul>
+          <li><a href="#leistungen">Leistungen</a></li>
+          <li><a href="#atelier">Atelier</a></li>
+          <li><a href="#galerie">Galerie</a></li>
+          <li><a href="#kontakt">Termin</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© <span id="yr"></span> Friseur Müller-Steinbrech · Mainz</span>
+      <span>Website: FlowState · <a href="https://flowstate.de">flowstate.de</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
